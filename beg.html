@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volkswagen - Innovation in Motion</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --vw-blue: #00569D;
+            --vw-white: #FFFFFF;
+            --vw-gray: #F5F5F5;
+            --vw-dark: #333333;
+            --vw-accent: #FF8800;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--vw-dark);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--vw-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--vw-blue);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--vw-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--vw-blue);
+        }
+        
+        /* Hero Section with Background Image */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://images.unsplash.com/photo-1494972308805-463bc619d34e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--vw-white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--vw-accent);
+            color: var(--vw-white);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e67300;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: var(--vw-gray);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--vw-blue);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--vw-white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--vw-blue);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--vw-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background-color: var(--vw-blue);
+            color: var(--vw-white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--vw-white);
+            padding: 2rem;
+            border-radius: 8px;
+            color: var(--vw-dark);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--vw-blue);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--vw-dark);
+            color: var(--vw-white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--vw-white);
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">VOLKSWAGEN</div>
+                <ul class="nav-links">
+                    <li><a href="http://127.0.0.1:5500/beg.html#">Home</a></li>
+                    <li><a href="https://www.volkswagen.co.in/en/models.html">Models</a></li>
+                    <li><a href="https://www.volkswagen-group.com/en/volkswagen-group-technology-16016">Technology</a></li>
+                    <li><a href="https://www.volkswagen-group.com/en/about-us-16013">About</a></li>
+                    <li><a href="https://www.volkswagen.co.in/app/site/contactus/">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Background Image -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>INNOVATION IN MOTION</h1>
+            <p>Discover the future of driving with Volkswagen's latest models and cutting-edge technology.</p>
+            <a href="https://www.volkswagen.co.in/en/models.html" class="btn">Explore Models</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>VOLKSWAGEN ADVANTAGES</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>LEADING TECHNOLOGY</h3>
+                    <p>Experience Volkswagen's innovative engineering and smart features that make every drive exceptional.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>SAFETY FIRST</h3>
+                    <p>Our comprehensive safety systems protect what matters most - you and your loved ones.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>SUSTAINABLE MOBILITY</h3>
+                    <p>Join the electric revolution with our ID. family of fully electric vehicles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>ABOUT VOLKSWAGEN</h2>
+                    <p>For over 80 years, Volkswagen has been passionate about creating vehicles that combine quality, performance, and value.</p>
+                    <p>From our iconic Beetle to our modern electric vehicles, we continue to innovate while staying true to our German engineering heritage.</p>
+                    <a href="https://www.volkswagen-newsroom.com/en/history-3693" class="btn">Our History</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Volkswagen factory">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>OUR SERVICES</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>TEST DRIVES</h3>
+                    <p>Experience your favorite Volkswagen model firsthand with our convenient test drive program.</p>
+                </div>
+                <div class="service-card">
+                    <h3>FINANCING OPTIONS</h3>
+                    <p>Flexible financing solutions tailored to your budget and lifestyle.</p>
+                </div>
+                <div class="service-card">
+                    <h3>MAINTENANCE</h3>
+                    <p>Expert service and maintenance from certified Volkswagen technicians.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://www.volkswagen-group.com/en/privacy-policy-15677">Privacy Policy</a>
+                <a href="https://www.vw.com/en/terms.html">Terms of Service</a>
+                <a href="https://www.volkswagen.co.in/app/site/contactus/">Contact Us</a>
+                <a href="https://www.volkswagen-group.com/en/career-16057">Careers</a>
+            </div>
+            <p class="copyright">© 2023 Volkswagen. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
